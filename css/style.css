@@ -47,6 +47,30 @@ body {
   z-index: 2;
 }
 
+.top-nav {
+    position: absolute;
+    top: 40px;
+    right: 60px;
+    z-index: 10;
+}
+
+.services-btn {
+    text-decoration: none;
+    color: white;
+    border: 1px solid rgba(44,110,255,.6);
+    padding: 12px 24px;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 2px;
+    font-size: 15px;
+    transition: .3s;
+}
+
+.services-btn:hover {
+    background: #2367ff;
+    border-color: #2367ff;
+    transform: translateY(-2px);
+}
+
 /* ── Logo area ── */
 .logo-area {
   width: 380px;

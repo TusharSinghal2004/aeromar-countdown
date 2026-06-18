@@ -1,0 +1,88 @@
+body{
+    font-family:Inter,sans-serif;
+    background:#02142f;
+    color:white;
+    overflow-x:hidden;
+}
+
+.background-grid{
+    position:fixed;
+    inset:0;
+
+    background:
+      linear-gradient(rgba(41,91,255,.12) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(41,91,255,.12) 1px,transparent 1px);
+
+    background-size:80px 80px;
+    opacity:.5;
+    pointer-events:none;
+}
+
+.hero{
+    text-align:center;
+    padding:120px 20px 80px;
+}
+
+.hero h1{
+    font-family:'Bebas Neue';
+    font-size:72px;
+    letter-spacing:4px;
+}
+
+.hero span{
+    color:#1f66ff;
+}
+
+.hero p{
+    color:#8d9cb9;
+    max-width:700px;
+    margin:20px auto;
+}
+
+.services-grid{
+    width:min(1200px,90%);
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+
+    padding-bottom:120px;
+}
+
+.service-card{
+    background:rgba(20,45,95,.35);
+    border:1px solid rgba(44,110,255,.4);
+
+    padding:35px;
+
+    backdrop-filter:blur(12px);
+
+    opacity:0;
+    transform:translateY(30px);
+
+    transition:.35s;
+}
+
+.service-card.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.service-card:hover{
+    border-color:#2367ff;
+    transform:translateY(-6px);
+}
+
+.service-card h3{
+    font-family:'Bebas Neue';
+    letter-spacing:1px;
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.service-card p{
+    color:#9ba8c3;
+    line-height:1.8;
+    font-size:14px;
+}
