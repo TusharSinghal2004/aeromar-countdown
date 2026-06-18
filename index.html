@@ -4,14 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aeromarus | Coming Soon</title>
-
   <link rel="stylesheet" href="./css/style.css" />
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
-  />
-</head>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" /></head>
 <body>
 
 <div class="background-grid"></div>
@@ -20,69 +14,60 @@
 
   <div class="content">
 
-    <h1>
-      <span class="blue">MOVES</span>
-      WITH US.
+    <div class="logo-area">
+      <img src="./assets/horizontal.png" alt="Aeromarus Logo" class="logo-img" />
+    </div>
+
+    <h1 class="animate-in" style="animation-delay: 0.1s">
+      <span class="blue">THE WORLD</span><br />MOVES WITH US.
     </h1>
 
-    <p>
-      Aeromarus delivers precision-engineered logistics —
+    <p class="animate-in" style="animation-delay: 0.25s">
+      Aeromar delivers precision-engineered logistics —
       air freight, road transport, and end-to-end supply
       chain solutions built for a world that never stops moving.
     </p>
 
-    <div class="divider"></div>
+    <div class="divider animate-in" style="animation-delay: 0.35s"></div>
 
-    <div class="countdown">
-
+    <div class="countdown animate-in" style="animation-delay: 0.45s">
       <div class="time-box">
-        <span id="days">12</span>
+        <span id="days">00</span>
         <small>DAYS</small>
       </div>
-
       <div class="separator">:</div>
-
       <div class="time-box">
-        <span id="hours">07</span>
+        <span id="hours">00</span>
         <small>HOURS</small>
       </div>
-
       <div class="separator">:</div>
-
       <div class="time-box">
-        <span id="minutes">06</span>
+        <span id="minutes">00</span>
         <small>MINUTES</small>
       </div>
-
       <div class="separator">:</div>
-
       <div class="time-box">
-        <span id="seconds">31</span>
+        <span id="seconds">00</span>
         <small>SECONDS</small>
       </div>
-
     </div>
 
-    <h4>BE THE FIRST TO KNOW</h4>
+    <h4 class="animate-in" style="animation-delay: 0.55s">BE THE FIRST TO KNOW</h4>
 
-    <form class="notify-form">
-      <input
-        type="email"
-        placeholder="your@email.com"
-      />
-
-      <button type="submit">
-        NOTIFY ME
-      </button>
+    <form class="notify-form animate-in" style="animation-delay: 0.65s" onsubmit="handleSubmit(event)">
+      <input type="email" placeholder="your@email.com" id="email-input" />
+      <button type="submit">NOTIFY ME</button>
     </form>
 
-    <div class="footer-links">
+    <p class="success-msg" id="success-msg">You're on the list. We'll be in touch.</p>
+
+    <div class="footer-links animate-in" style="animation-delay: 0.75s">
       <a href="#">LinkedIn</a>
       <a href="#">Twitter</a>
       <a href="#">aeromarus.com</a>
     </div>
 
-    <div class="copyright">
+    <div class="copyright animate-in" style="animation-delay: 0.8s">
       © 2026 Aeromarus. All rights reserved.
     </div>
 
@@ -91,6 +76,17 @@
 </div>
 
 <script src="./js/countdown.js"></script>
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    const input = document.getElementById('email-input');
+    const msg = document.getElementById('success-msg');
+    if (input.value) {
+      msg.classList.add('visible');
+      input.value = '';
+    }
+  }
+</script>
 
 </body>
 </html>

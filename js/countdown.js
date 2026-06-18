@@ -1,9 +1,12 @@
-const launchDate = new Date("August 1, 2026 00:00:00").getTime();
+const launchDate = new Date();
+launchDate.setDate(launchDate.getDate() + 7);
+
+const launchTime = launchDate.getTime();
 
 setInterval(() => {
 
     const now = new Date().getTime();
-    const distance = launchDate - now;
+    const distance = launchTime - now;
 
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
 
@@ -22,15 +25,15 @@ setInterval(() => {
     );
 
     document.getElementById("days").innerText =
-        String(days).padStart(2,"0");
+        String(days).padStart(2, "0");
 
     document.getElementById("hours").innerText =
-        String(hours).padStart(2,"0");
+        String(hours).padStart(2, "0");
 
     document.getElementById("minutes").innerText =
-        String(minutes).padStart(2,"0");
+        String(minutes).padStart(2, "0");
 
     document.getElementById("seconds").innerText =
-        String(seconds).padStart(2,"0");
+        String(seconds).padStart(2, "0");
 
-},1000);
+}, 1000);
