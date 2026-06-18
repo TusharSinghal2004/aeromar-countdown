@@ -36,13 +36,22 @@ body {
 .container {
   width: 100%;
   min-height: 100vh;
+
   display: flex;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px;
 }
 
 .content {
+  width: 100%;
   max-width: 760px;
-  padding: 70px 80px 80px 80px;
+
+  text-align: center;
+
+  padding: 0;
+
   position: relative;
   z-index: 2;
 }
@@ -73,10 +82,13 @@ body {
 
 /* ── Logo area ── */
 .logo-area {
-  width: 380px;
-  height: 140px;
-  margin-bottom: 40px;
+  width: 420px;
+  height: 150px;
+
+  margin: 0 auto 30px;
+
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -129,18 +141,18 @@ h1 {
 }
 
 p {
-  max-width: 580px;
+  max-width: 650px;
   color: #8d9cb9;
   font-size: 15px;
   line-height: 1.75;
-  margin-bottom: 32px;
+  margin: 0 auto 32px;
 }
 
 /* ── Divider ── */
 .divider {
   height: 1px;
   background: #174ebf;
-  margin-bottom: 32px;
+  margin: 0 auto 32px;
   animation: fadeUp 0.7s ease forwards, divider-grow 0.9s ease forwards;
   animation-delay: 0.35s, 0.35s;
 }
@@ -148,7 +160,8 @@ p {
 /* ── Countdown ── */
 .countdown {
   display: flex;
-  align-items: flex-start;
+    justify-content: center;
+  align-items: center;
   gap: 16px;
   margin-bottom: 48px;
 }
@@ -210,8 +223,9 @@ h4 {
 
 .notify-form {
   display: flex;
-  width: 480px;
-  margin-bottom: 14px;
+  width: 100%;
+  max-width : 520px;
+  margin: 0 auto 14px;
 }
 
 .notify-form input {
@@ -274,6 +288,7 @@ h4 {
 /* ── Footer ── */
 .footer-links {
   display: flex;
+  justify-content : center ;
   gap: 22px;
   margin-bottom: 20px;
 }
@@ -307,6 +322,7 @@ h4 {
 
 .copyright {
   color: #566886;
+  text-align : center ;
   font-size: 12px;
 }
 
