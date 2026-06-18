@@ -13,7 +13,6 @@ body {
   position: relative;
 }
 
-/* ── Grid background ── */
 .background-grid {
   position: fixed;
   inset: 0;
@@ -32,66 +31,60 @@ body {
   background: radial-gradient(circle at center, transparent 20%, rgba(0, 0, 0, 0.45) 100%);
 }
 
-/* ── Layout ── */
 .container {
   width: 100%;
   min-height: 100vh;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
-  padding: 40px;
+  padding: 140px 40px 60px; /* increased from 100px */
 }
 
 .content {
   width: 100%;
   max-width: 760px;
-
   text-align: center;
-
-  padding: 0;
-
   position: relative;
   z-index: 2;
 }
 
 .top-nav {
-    position: absolute;
-    top: 40px;
-    right: 60px;
-    z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: flex-end;
+  padding: 28px 60px;
 }
 
 .services-btn {
-    text-decoration: none;
-    color: white;
-    border: 1px solid rgba(44,110,255,.6);
-    padding: 12px 24px;
-    font-family: 'Bebas Neue', sans-serif;
-    letter-spacing: 2px;
-    font-size: 15px;
-    transition: .3s;
+  text-decoration: none;
+  color: white;
+  border: 1px solid rgba(44, 110, 255, .6);
+  padding: 12px 24px;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 2px;
+  font-size: 15px;
+  transition: .3s;
+  white-space: nowrap;
 }
 
 .services-btn:hover {
-    background: #2367ff;
-    border-color: #2367ff;
-    transform: translateY(-2px);
+  background: #2367ff;
+  border-color: #2367ff;
+  transform: translateY(-2px);
 }
 
-/* ── Logo area ── */
 .logo-area {
   width: 420px;
   height: 150px;
-
   margin: 0 auto 30px;
-
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 
 .logo-img {
   max-width: 100%;
@@ -99,16 +92,9 @@ body {
   object-fit: contain;
 }
 
-/* ── Animations ── */
 @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes pulse-border {
@@ -126,11 +112,10 @@ body {
   animation: fadeUp 0.7s ease forwards;
 }
 
-/* ── Typography ── */
 h1 {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 72px;
-  line-height: 1;
+  font-size: clamp(40px, 9vw, 72px);
+  line-height: 1.05;
   font-weight: 400;
   letter-spacing: 2px;
   margin-bottom: 24px;
@@ -148,7 +133,6 @@ p {
   margin: 0 auto 32px;
 }
 
-/* ── Divider ── */
 .divider {
   height: 1px;
   background: #174ebf;
@@ -157,13 +141,13 @@ p {
   animation-delay: 0.35s, 0.35s;
 }
 
-/* ── Countdown ── */
 .countdown {
   display: flex;
-    justify-content: center;
+  justify-content: center;
   align-items: center;
   gap: 16px;
   margin-bottom: 48px;
+  flex-wrap: wrap;
 }
 
 .time-box {
@@ -211,7 +195,6 @@ p {
   font-weight: 400;
 }
 
-/* ── Form ── */
 h4 {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 16px;
@@ -224,7 +207,7 @@ h4 {
 .notify-form {
   display: flex;
   width: 100%;
-  max-width : 520px;
+  max-width: 520px;
   margin: 0 auto 14px;
 }
 
@@ -238,6 +221,7 @@ h4 {
   font-size: 14px;
   outline: none;
   transition: border-color 0.3s ease;
+  min-width: 0;
 }
 
 .notify-form input::placeholder {
@@ -250,6 +234,7 @@ h4 {
 
 .notify-form button {
   width: 150px;
+  flex-shrink: 0;
   border: none;
   background: #2367ff;
   color: white;
@@ -269,7 +254,6 @@ h4 {
   transform: scale(0.98);
 }
 
-/* ── Success message ── */
 .success-msg {
   font-size: 13px;
   color: #4d8fff;
@@ -285,12 +269,12 @@ h4 {
   transform: translateY(0);
 }
 
-/* ── Footer ── */
 .footer-links {
   display: flex;
-  justify-content : center ;
+  justify-content: center;
   gap: 22px;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .footer-links a {
@@ -322,33 +306,41 @@ h4 {
 
 .copyright {
   color: #566886;
-  text-align : center ;
+  text-align: center;
   font-size: 12px;
 }
 
-/* ── Responsive ── */
+/* ── Tablet ── */
 @media (max-width: 768px) {
-  .content {
-    padding: 36px 22px 56px;
+  .container {
+    padding: 90px 24px 60px;
+    align-items: flex-start;
+  }
+
+  .top-nav {
+    padding: 18px 24px;
+  }
+
+  .services-btn {
+    font-size: 12px;
+    padding: 10px 16px;
+    letter-spacing: 1.5px;
   }
 
   .logo-area {
-    width: 200px;
-    height: 90px;
-    margin-bottom: 36px;
-  }
-
-  h1 {
-    font-size: 52px;
+    width: 240px;
+    height: 100px;
+    margin-bottom: 24px;
   }
 
   p {
     font-size: 14px;
+    padding: 0 4px;
   }
 
   .countdown {
-    flex-wrap: wrap;
     gap: 10px;
+    margin-bottom: 36px;
   }
 
   .time-box {
@@ -360,14 +352,94 @@ h4 {
     font-size: 30px;
   }
 
+  .separator {
+    font-size: 22px;
+    margin-top: 16px;
+  }
+
   .notify-form {
-    width: 100%;
     flex-direction: column;
     gap: 10px;
+    max-width: 100%;
+  }
+
+  .notify-form input {
+    width: 100%;
   }
 
   .notify-form button {
     width: 100%;
     height: 50px;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 480px) {
+  .container {
+    padding: 80px 18px 50px;
+  }
+
+  .top-nav {
+    padding: 16px 18px;
+    justify-content: center;
+  }
+
+  .logo-area {
+    width: 180px;
+    height: 80px;
+    margin-bottom: 20px;
+  }
+
+  .countdown {
+    gap: 8px;
+  }
+
+  .time-box {
+    width: 66px;
+    height: 66px;
+  }
+
+  .time-box span {
+    font-size: 26px;
+  }
+
+  .time-box small {
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+
+  .separator {
+    font-size: 18px;
+    margin-top: 12px;
+  }
+
+  h4 {
+    font-size: 13px;
+    letter-spacing: 2px;
+  }
+
+  .footer-links {
+    gap: 14px;
+  }
+
+  .copyright {
+    font-size: 11px;
+    padding: 0 10px;
+  }
+}
+
+/* ── Very small screens (320px) ── */
+@media (max-width: 360px) {
+  .time-box {
+    width: 58px;
+    height: 58px;
+  }
+
+  .time-box span {
+    font-size: 22px;
+  }
+
+  .separator {
+    font-size: 16px;
   }
 }
